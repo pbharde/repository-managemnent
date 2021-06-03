@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 }
+.repos {
+  align-self: center;
+  color: white;
+}
 
 .search {
   display: flex;

@@ -27,6 +27,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className={styles.searchContainer}>
+      <h1 className={styles.repos}>Github Repositories</h1>
         <div className={styles.search}>
           <input
             type="text"

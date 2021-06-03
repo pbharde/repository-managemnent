@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './searchRepo.module.css';
 
-class Search extends React.Component {
+class SearchRepo extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -28,4 +28,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default SearchRepo;

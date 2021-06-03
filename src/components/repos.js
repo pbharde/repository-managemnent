@@ -1,18 +1,32 @@
 import React from 'react';
 import styles from './repos.module.css'
 import SearchRepo from './searchRepo';
+import GridView from './gridView';
+import ListView from './listView';
 
-class Search extends React.Component {
+
+class Repos extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchRepo:''
+      searchRepo:'',
+      listView: true,
+      gridView:false,
+      activeBtn:true
     }
   }
 
   handleChange = (searchRepo) => {
     this.setState({searchRepo})
   }
+
+  toggleView = (searchRepo) => {
+    this.setState(prevState => ({
+          listView: !prevState.listView,
+          gridView: !prevState.gridView,
+        }))
+  }
+
 
   render() {
     let searchRepo = this.state.searchRepo;
@@ -21,25 +35,21 @@ class Search extends React.Component {
       filteredRepos = this.props.repos.filter(eachRepo=>eachRepo.name.toLowerCase().indexOf(searchRepo.toLowerCase())!== -1);
     }
 
+
     return (
       <div className={styles.repoContainer}>
         <h1 className={styles.user}>Repositories for - {this.props.user}</h1>
-        <SearchRepo repos={this.props.repo} searchRepo={this.handleChange}/>
-        <div className={styles.resultContainer}>
-          {
-            filteredRepos.map(repo=>
-              <div className={styles.card} key={repo.id}>
-                <div className={styles.cardContainer}>
-                  <h3><b>{repo.name}</b></h3>
-                  <h5>{repo.language}</h5>
-                </div>
-              </div>
-            )
-          }
+        <div className={styles.btnContainer}>
+          <button className={this.state.listView ? styles.active : styles.btn} onClick={this.toggleView}><i class="fa fa-bars"></i> List</button>
+          <button className={this.state.gridView ? styles.active : styles.btn} onClick={this.toggleView}><i class="fa fa-th-large"></i> Grid</button>
         </div>
+        <SearchRepo repos={this.props.repo} searchRepo={this.handleChange}/>
+        {
+          filteredRepos.length >0 ? (this.state.listView ? <ListView filteredRepos={filteredRepos}/> :<GridView filteredRepos={filteredRepos}/>) : null
+        }
       </div>
     )
   }
 }
 
-export default Search;
+export default Repos;
