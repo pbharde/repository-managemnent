@@ -15,4 +15,4 @@ run app on chrome http://localhost:3006/
 
 Or
 
-Access website directly on https://unruffled-kilby-c6d439.netlify.app/
+Access website directly on https://pensive-brown-7f4c72.netlify.app/
