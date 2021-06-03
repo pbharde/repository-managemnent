@@ -1,0 +1,33 @@
+.repoContainer {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+  background: white;
+  height: 100px;
+}
+
+.cardContainer {
+  margin-top: 3%;
+  padding: 10px;
+  background: white;
+}
+
+
+.resultContainer {
+  margin-top: 2%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-auto-rows: repeat(auto-fill, 120px);
+  grid-row-gap: .5em;
+  grid-column-gap: 1em;
+ }
+
+ .user {
+   align-self: center;
+   color: white;
+ }

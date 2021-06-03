@@ -1,0 +1,37 @@
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input {
+	box-sizing: border-box;
+	font-size: 13px;
+	vertical-align: top;
+}
+
+.searchInput {
+  padding: 0 30px;
+	font-size: 12px;
+	width: 700px;
+	max-width: 500px;
+	height: 30px;
+	border: 1px solid darken(white, 30%);
+	border-radius: 20px 0 0 20px;
+}
+
+.searchButton {
+  cursor: pointer;
+	border: none;
+	background: #1E1E20;
+	border-radius: 0 20px 20px 0;
+	width: 150px;
+	height: 30px;
+  font-size: 15px;
+  color: white;
+}
